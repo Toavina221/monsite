@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: head}"></head>
+<body>
+
+    <div th:replace="~{fragments/header :: navbar}"></div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h1 class="display-4" th:text="${titre}"></h1>
+                <p class="lead">Bienvenue sur mon premier site web développé avec <strong>Java Spring Boot</strong>.</p>
+                <hr>
+                <p>Ce site est encore en développement. Il sera bientôt mis en ligne.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
