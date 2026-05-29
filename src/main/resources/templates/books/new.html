@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/header :: head}"></head>
+<body>
+
+    <div th:replace="~{fragments/header :: navbar}"></div>
+
+    <div class="container mt-5">
+        <h1 th:text="${titre}"></h1>
+
+        <form th:action="@{/books}" th:object="${book}" method="post" class="mt-4">
+            
+            <div class="mb-3">
+                <label class="form-label">Titre du livre</label>
+                <input type="text" class="form-control" th:field="*{titre}" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Auteur</label>
+                <input type="text" class="form-control" th:field="*{auteur}" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Édition</label>
+                <input type="text" class="form-control" th:field="*{edition}">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Date de publication</label>
+                <input type="date" class="form-control" th:field="*{datePublication}">
+            </div>
+
+            <button type="submit" class="btn btn-success">Enregistrer le livre</button>
+            <a href="/books" class="btn btn-secondary">Annuler</a>
+        </form>
+    </div>
+
+</body>
+</html>
